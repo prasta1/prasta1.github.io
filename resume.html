@@ -10,15 +10,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg:     oklch(0.975 0.005 240);
-  --ink:    oklch(0.24 0.015 250);
-  --ink-2:  oklch(0.34 0.015 250);
-  --ink-3:  oklch(0.42 0.015 250);
-  --ink-4:  oklch(0.45 0.015 250);
-  --ink-5:  oklch(0.48 0.015 250);
-  --accent: oklch(0.5 0.13 245);
+  --bg:        oklch(0.975 0.005 240);
+  --card-bg:   oklch(0.995 0.002 240);
+  --card-border: oklch(0.9 0.01 245);
+  --ink:       oklch(0.24 0.015 250);
+  --ink-2:     oklch(0.34 0.015 250);
+  --ink-3:     oklch(0.42 0.015 250);
+  --ink-4:     oklch(0.45 0.015 250);
+  --ink-5:     oklch(0.48 0.015 250);
+  --ink-6:     oklch(0.55 0.02 250);
+  --accent:    oklch(0.5 0.13 245);
   --accent-hover: oklch(0.38 0.13 245);
   --selection: oklch(0.88 0.05 245);
+  --dark-bg:   oklch(0.24 0.02 250);
+  --dark-ink:  oklch(0.94 0.005 240);
+  --dark-ink-2: oklch(0.78 0.01 245);
+  --dark-ink-3: oklch(0.72 0.01 245);
   --border: 1px solid oklch(0.85 0.01 250);
   --serif:  'Lora', Georgia, serif;
   --sans:   'Archivo', sans-serif;
@@ -40,17 +47,19 @@ a:hover { color: var(--accent-hover); text-decoration: underline; }
   .role + .role { margin-top: 32px; }
 }
 
+.dark { background: var(--dark-bg); color: var(--dark-ink); }
+
 .nav { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 28px 0; font-family: var(--sans); }
-.nav .name { font-weight: 800; font-size: 16px; color: var(--ink); }
+.nav .name { font-weight: 800; font-size: 16px; color: var(--dark-ink); }
 .nav ul { display: flex; gap: 26px; list-style: none; font-size: 14px; font-weight: 500; }
-.nav a { color: var(--ink-2); }
+.nav a { color: var(--dark-ink-2); }
 .nav a:hover { text-decoration: none; color: var(--accent); }
 .nav a.active { color: var(--accent); }
 
-.header { border-bottom: 2px solid var(--ink); padding-bottom: 28px; margin-bottom: 40px; }
+.header { padding-bottom: 56px; }
 .header h1 { font-family: var(--sans); font-weight: 800; font-size: 40px; letter-spacing: -0.015em; }
-.header .sub { font-size: 18px; margin: 10px 0 14px; color: var(--ink-2); }
-.header .contact { display: flex; gap: 18px; flex-wrap: wrap; align-items: baseline; font-family: var(--sans); font-size: 13.5px; color: var(--ink-5); }
+.header .sub { font-size: 18px; margin: 10px 0 14px; color: var(--dark-ink-2); }
+.header .contact { display: flex; gap: 18px; flex-wrap: wrap; align-items: baseline; font-family: var(--sans); font-size: 13.5px; color: var(--dark-ink-3); }
 .header .contact .print-link { border: 1px solid var(--accent); padding: 5px 12px; font-weight: 600; }
 .header .contact .print-link:hover { text-decoration: none; background: var(--selection); }
 
@@ -86,9 +95,10 @@ h2 { font-family: var(--sans); font-weight: 700; font-size: 14px; letter-spacing
 </style>
 </head>
 <body>
+<div class="dark screen-only">
 <div class="page">
 
-  <nav class="nav screen-only">
+  <nav class="nav">
     <span class="name">Patrick Ruster</span>
     <ul>
       <li><a href="index.html">The work</a></li>
@@ -110,6 +120,10 @@ h2 { font-family: var(--sans); font-weight: 700; font-size: 14px; letter-spacing
       <a href="resume-print.html" class="print-link">Print / PDF version</a>
     </div>
   </header>
+</div>
+</div>
+
+<div class="page">
 
   <section>
     <p class="intro">10+ years in SaaS customer success and business development. Led customer success at Edge Impulse from 2020 through its acquisition by Qualcomm, building the retention, expansion, and product-led growth systems documented on <a href="index.html">the work page</a>. Earlier career across DataRobot, CarGurus, Faraday, Sama, and startups.</p>
